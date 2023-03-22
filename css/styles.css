@@ -1,0 +1,205 @@
+:root {
+	--blue: #6593A6;
+	--grey: #58595B;
+	--yellow: #F2CF63;
+	--orange: #F2C063;
+	--white: #F2F2F2;
+}
+
+/* Utility Classes */
+
+.container {
+	margin: auto;
+	max-width: 1024px;
+}
+
+.sr-only {
+	position: absolute;
+	top: auto;
+	left: -9999px;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
+
+/* Typography */
+
+body {
+	background-color: var(--grey);
+	font-family: 'Karla', sans-serif;
+}
+
+h2 { margin-bottom: 1rem; }
+
+/* Header */
+header {
+	padding: 1rem;
+	background-color: var(--blue);
+}
+
+header img { height: 4rem; }
+
+.upper-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.menu-toggle { cursor: pointer; }
+.menu-toggle svg { width: 3rem; }
+.menu-toggle svg path,
+.menu-toggle p {
+	fill: var(--white);
+	color: var(--white);
+	text-align: center;
+	transition: all 0.3s ease;
+}
+
+.menu-toggle:hover svg path,
+.menu-toggle:hover p {
+	fill: var(--orange);
+	color: var(--orange);
+}
+
+/* Search Form */
+header form {
+	margin: 1.5rem 0 0 0;
+	display: flex;
+}
+
+header input[name=search-bar] {
+	width: 100%;
+	padding: 0.5rem;
+	/**top-left, top-right, bottom-right, bottom-left */
+	border-radius: 0.4rem 0 0 0.4rem; 
+	border: none;
+}
+.magnifying-glass { position: relative; }
+
+header input[type=submit] {
+	border: none;
+	outline: 0;
+	background-color: var(--orange);
+	border-radius: 0 0.4rem 0.4rem 0;
+	width:  2.5rem;
+	height: 2.5rem;
+	cursor: pointer;
+}
+
+.magnifying-glass svg {
+	position: absolute;
+	width: 1.8rem;
+	right: 5px;
+	top: 5px;
+	cursor: pointer;
+	fill: var(--grey);
+}
+
+.magnifying-glass svg path { fill: var(--grey); }
+
+main {
+	padding: 2rem 1rem;
+}
+main .container {
+	background-color: var(--white);
+	padding: 2rem 1rem;
+	border-radius: 0.4rem;
+}
+.login {
+	border-bottom: 2px dashed var(--grey);
+	padding-bottom: 2rem;
+	margin-bottom: 2rem;
+}
+/* Login Form */
+.login form div {
+	margin-bottom: 1rem;
+}
+.login form label {
+	display: block;
+	margin-bottom: 0.5rem;
+}
+
+.login form input {
+	width: 100%;
+	background-color: #fff;
+	border: 1px solid var(--blue);
+	border-radius: 0.4rem;
+	padding: 0.5rem;
+}
+
+.login .hint {
+	font-size: 0.8rem;
+	margin-top: 0.5rem;
+}
+
+.login form input[type=email]:invalid,
+.login form input[type=password]:invalid {
+	background: url('../img/exclamation.svg') 95% / 1rem no-repeat white;
+}
+
+.login form input[type=email]:valid,
+.login form input[type=password]:valid {
+	background: url('../img/check.svg') 95% / 1rem no-repeat white;
+}
+
+.login form input[type=submit] {
+	background-color: var(--orange);
+	border: none;
+	text-transform: lowercase;
+	letter-spacing: 0.1rem;
+	margin-top: 1rem;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+}
+
+.login form input[type=submit]:hover {
+	background-color: var(--blue);
+	color: #fff;
+}
+
+/* Sign-Up Area */
+.sign-up p {
+	margin-bottom: 1rem;
+}
+
+.sign-up a {
+	display: inline-block;
+	background-color: var(--blue);
+	text-transform: lowercase;
+	text-decoration: none;
+	border-radius: 0.4rem;
+	padding: 1rem 2rem;
+	margin-top: 1rem;
+	color: #fff;
+	transition: all 0.3s ease;
+}
+
+.sign-up a:hover {
+	background-color: var(--orange);
+	color: var(--grey);
+}
+
+
+/* Media Queries */
+
+@media screen and (min-width: 720px) {
+	main .container {
+		display: flex;
+		padding: 2rem 0;
+	}
+
+	.login {
+		border-bottom: none;
+		border-right: 2px dashed var(--grey);
+		padding: 2rem;
+	}
+
+	.sign-up {
+		max-width: 60ch;
+		padding: 2rem;
+	}
+}
+
+
+
+
